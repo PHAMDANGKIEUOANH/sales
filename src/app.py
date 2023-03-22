@@ -4,7 +4,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
 import plotly.express as px
-ecom_sales = pd.read_csv(r'C:\Users\ADMIN\Desktop\sales\ecom_sales.csv')
+ecom_sales = pd.read_csv('ecom_sales.csv')
 ecom_bar = ecom_sales.groupby('Country')['OrderValue'].agg('sum').reset_index(name='Total Sales ($)')
 bar_graph = px.bar(data_frame=ecom_bar, x='Total Sales ($)', y='Country', orientation='h',title='Total Sales by Country')
 
